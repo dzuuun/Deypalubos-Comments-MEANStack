@@ -61,6 +61,7 @@ this.commentService.updateComment(this.id, this.form.value).subscribe(res => {
   this.data = res;
   this.toastr.success(JSON.stringify('Comment updated Successfully'));
   this.router.navigateByUrl('/');
-});
-}
+    });
+  }
+
 }
