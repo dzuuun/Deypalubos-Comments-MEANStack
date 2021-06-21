@@ -1,0 +1,31 @@
+ <!-- input comment container-->
+ <button routerLink="" type="button" class="btn-close" aria-label="Close"></button>
+<h1 class="display-2">Edit comment</h1>
+<div class="mb-3" class="form-group">
+  <form (ngSubmit)="updateComment()" [formGroup]="form" >
+    <label for="inputName" class="form-label">Name</label>
+    <input type="text" formControlName="name"  class="form-control" [ngClass]="{'is-invalid':submitted && f.name.errors}"  id="inputName" placeholder="Write your name" >
+<!---->
+
+    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+      <div *ngIf="f.name.errors.required">Name is required</div>
+    </div>
+
+  <div class="mb-3" class="form-group">
+    <label for="inputComment" class="form-label">Leave a comment</label>
+    <textarea formControlName="comment" class="form-control" [ngClass]="{'is-invalid':submitted && f.name.errors}"  id="inputComment" rows="8" placeholder="Write your comment..."></textarea>
+  </div>
+    <!---->
+    <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
+      <div *ngIf="f.comment.errors.required">Comment is required</div>
+    </div>
+
+    <br>
+
+    <div class="form-group d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-light btn-lg float-right btn-sm" type="reset">Reset Fields</button>
+      <button class="btn btn-primary btn-lg float-right btn-sm" type="submit">Send Comment</button>
+    </div>
+  </form>
+</div>
+  <!-- input comment container ends-->
