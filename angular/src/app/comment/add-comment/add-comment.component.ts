@@ -33,6 +33,7 @@ data: any;
     return this.form.controls;
   }
 
+  // insert comment to db
   insertComment() {
     this.submitted=true;
     if(this.form.invalid) {

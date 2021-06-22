@@ -14,21 +14,23 @@ data:any;
   constructor(private commentService:CommentService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
-    this.getCommentsComment();
+    this.getCommentsData();
   }
 
-  getCommentsComment() {
+  // get comment by id
+  getCommentsData() {
     this.commentService.getComment().subscribe(res => {
       console.log(res);
       this.comments = res;
     });
   }
 
+// delete comment
   deleteComment(id: any) {
     this.commentService.deleteComment(id).subscribe(res => {
       this.data = res;
       this.toastr.error(JSON.stringify('Comment deleted Successfully'));
-      this.getCommentsComment();
+      this.getCommentsData();
     });
     
   }

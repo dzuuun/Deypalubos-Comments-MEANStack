@@ -1,14 +1,15 @@
 <!--<app-add-comment></app-add-comment>-->
 
-<div>
+<div class="container">
   <br>
   <main role="main" class="container">
     <div class="row">
-      <div class="blog-post">
-        <h2 class="blog-post-title">Sample repository post</h2>
-        <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
-        <p>This blog post shows a few different types of content that's supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+      <div class="repo-post">
+        <h2 class="repo-post-title">Mock title here</h2>
+        <p class="-post-meta">July 1, 2021 by <a href="#">Name of authors</a></p>
+        <p>This sample repository post will show how a comments section will help serve as a forum for communities that will take advantage of the repository archive.</p>
         <hr>
+        <p>This portion will serve as a description of the content.</p>
         <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
         <blockquote>
         <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -18,29 +19,33 @@
     </div>
   </main>
 </div>
+<hr>
+<!--mock data ends-->
 
-<div>
+
   <br>
-  <h1 class="display-5">All Comments</h1>
-  <br>
-  
-  <div class="container" *ngFor="let cmts of comments; let i = index">
-    <div class="container">
-      <div class="row">
+  <div class="dropdown">
+    <h1 class="display-6 dropdown-toggle" id="commentsDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside">All Comments</h1>
+    <ul class="dropdown-menu" aria-labelledby="commentsDropdown">
+    <div class="container" *ngFor="let cmts of comments; let i = index">
       <!--comment--> 
-        <h3  class="col-10">{{cmts.name}}</h3>
-        <i class="bi bi-pencil col-1" style="font-size: 20px; color: cornflowerblue;"routerLink="edit/{{cmts._id}}"></i>
-        <i class="bi bi-trash col-1" style="font-size: 20px; color: cornflowerblue;" (click)="deleteComment(cmts._id)"></i> 
-        <p>{{cmts.comment}}</p>
-        <hr/>
-        <br>
+      <div class="container">
+        <div class="row">
+          <h3  class="col-10">{{cmts.name}}</h3>
+          <i class="bi bi-pencil col-1" style="font-size: 20px; color: cornflowerblue;"routerLink="edit/{{cmts._id}}"></i>
+          <i class="bi bi-trash col-1" style="font-size: 20px; color: cornflowerblue;" (click)="deleteComment(cmts._id)"></i> 
+          <p>{{cmts.comment}}</p>
+          <hr/>
+          <br>
+        </div>
+      </div> 
+    </div>
+    <!--comment-->
+      <div class="container">
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-light" routerLink="add-comment">Add Comment</button>
+        </div>
       </div>
-    </div>  
-  </div>
-  <div class="d-grid gap-2">
-    <button type="button" class="btn btn-light" routerLink="add-comment">Add Comment</button>
-  </div>
-  
-  
-</div> 
+    </ul>
+  </div> 
   
