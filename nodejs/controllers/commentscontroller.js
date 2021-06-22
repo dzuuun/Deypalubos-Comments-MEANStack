@@ -6,7 +6,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 // date and time
 const d = Date();
-console.log(d.toString());
+console.log("Server started on: " + d.toString());
 
 // view all comments
 router.get('/', (req, res) => {
