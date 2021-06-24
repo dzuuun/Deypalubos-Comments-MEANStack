@@ -22,13 +22,41 @@
 <hr>
 <!--mock data ends-->
 
+<!--Comments-->
+<br>
+<div>
+  <h1 class="display-6">All Comments</h1>
+  <br>
+  <div class="container" *ngFor="let cmts of comments; let i = index">
+    <div class="container">
+      <div class="row">
+        <h3  class="col-10">{{cmts.name}}</h3>
+        <i class="bi bi-pencil col-1" style="font-size: 20px; color: cornflowerblue;"routerLink="edit/{{cmts._id}}"></i>
+        <i class="bi bi-trash col-1" style="font-size: 20px; color: cornflowerblue;" (click)="deleteComment(cmts._id)"></i> 
+        <p>{{cmts.comment}}</p>
+        <hr/>
+        <br>
+      </div>
+    </div> 
+  </div>
 
+<!--Add comment button-->
+  <div class="container">
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-primary" routerLink="add-comment">Add Comment</button>
+    </div>
+  </div>
+
+</div> 
+
+
+<!-- Comments with dropdown
   <br>
   <div class="dropdown">
     <h1 class="display-6 dropdown-toggle" id="commentsDropdown" data-bs-toggle="dropdown" data-bs-auto-close="outside">All Comments</h1>
     <ul class="dropdown-menu" aria-labelledby="commentsDropdown">
     <div class="container" *ngFor="let cmts of comments; let i = index">
-      <!--comment--> 
+      
       <div class="container">
         <div class="row">
           <h3  class="col-10">{{cmts.name}}</h3>
@@ -40,12 +68,15 @@
         </div>
       </div> 
     </div>
-    <!--comment-->
+    
       <div class="container">
         <div class="d-grid gap-2">
           <button type="button" class="btn btn-primary" routerLink="add-comment">Add Comment</button>
         </div>
       </div>
+
     </ul>
+    
   </div> 
-  
+-->
+
