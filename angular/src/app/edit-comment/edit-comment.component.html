@@ -4,12 +4,13 @@
   <br>
    <button routerLink="" type="button" class="btn-close" aria-label="Close"></button>
    <h1 class="display-2">Edit comment</h1>
-   
+   <div class="container">
     <div class="mb-3" class="form-group">
       <form (ngSubmit)="updateComment()" [formGroup]="form" >
         <label for="inputName" class="form-label">Name</label>
         <input type="text" formControlName="name" class="form-control" [ngClass]="{'is-invalid':submitted && f.name.errors}"  id="inputName" placeholder="Write your name" >
-<!--validator-->
+
+        <!--validator-->
      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
         <div *ngIf="f.name.errors.required">Name is required</div>
       </div>
@@ -18,7 +19,8 @@
       <label for="inputComment" class="form-label">Leave a comment</label>
       <textarea formControlName="comment" class="form-control" [ngClass]="{'is-invalid':submitted && f.name.errors}"  id="inputComment" rows="8" placeholder="Write your comment..."></textarea>
     </div>
-<!--validator-->
+
+    <!--validator-->
     <div *ngIf="submitted && f.comment.errors" class="invalid-feedback">
       <div *ngIf="f.comment.errors.required">Comment is required</div>
     </div>
@@ -29,8 +31,10 @@
         <button class="btn btn-light btn-lg float-right btn-sm" type="reset">Reset Fields</button>
         <button class="btn btn-primary btn-lg float-right btn-sm" type="submit">Update Comment</button>
       </div>
-    </div>
+      </div>
     </form>
+    </div>
+    
   </div>
 </div>
   <!-- input comment container ends-->

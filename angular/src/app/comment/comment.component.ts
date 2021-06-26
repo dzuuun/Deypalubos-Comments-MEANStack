@@ -27,11 +27,13 @@ data:any;
 
 // delete comment
   deleteComment(id: any) {
+    if (confirm ('Are you sure you want to delete this comment?') == true) {
     this.commentService.deleteComment(id).subscribe(res => {
       this.data = res;
-      this.toastr.error(JSON.stringify('Comment deleted Successfully'));
+      this.toastr.error(JSON.stringify('Comment deleted'));
       this.getCommentsData();
+    
     });
     
   }
-}
+  }}
